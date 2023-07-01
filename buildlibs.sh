@@ -16,7 +16,7 @@ if [ "$BUILD_IOS" != "1" ]; then
     || error_code=$?
 
 if [ "$error_code" -ne 0 ]; then
-  echo "\n\nCONFIGURE ERROR $error_code , config.log:"
+  echo -e "\n\nCONFIGURE ERROR $error_code , config.log:"
   cat ${PWD}/builds/unix/config.log
   exit $error_code
 fi
