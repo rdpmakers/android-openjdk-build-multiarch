@@ -110,7 +110,7 @@ bash ./configure \
         $platform_args || \
 error_code=$?
 if [ "$error_code" -ne 0 ]; then
-  echo -e "\n\nCONFIGURE ERROR $error_code , config.log:"
+  echo "\n\nCONFIGURE ERROR $error_code , config.log:"
   cat config.log
   exit $error_code
 fi
