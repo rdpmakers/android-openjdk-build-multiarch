@@ -43,7 +43,7 @@ jobs:
     continue-on-error: true
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3.5.3
 
     - name: Build with CI build script
       run: |
@@ -53,19 +53,19 @@ jobs:
         bash "ci_build_arch_aarch64.sh"
 
     - name: Upload JDK build output
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3.1.2
       with:
         name: "jdk17-ios-aarch64"
         path: jdk17*.tar.xz
 
     - name: Upload JRE build output
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3.1.2
       with:
         name: 'jre17-ios-aarch64'
         path: jre17*.tar.xz
 
     - name: Upload JRE debuginfo build output
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3.1.2
       with:
         name: "jre17-ios-debuginfo-aarch64"
         path: dizout
