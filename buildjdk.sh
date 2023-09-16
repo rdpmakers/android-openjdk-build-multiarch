@@ -9,7 +9,11 @@ if [ "$TARGET_JDK" == "arm" ] # || [ "$BUILD_IOS" == "1" ]
 then
   export CFLAGS+=" -O3 -D__thumb__"
 else
-  export CFLAGS+=" -O3"
+  if [ "$TARGET_JDK" == "x86" ]; then
+     export CFLAGS+=" -O3 -mstackrealign"
+  else
+     export CFLAGS+=" -O3"
+  fi
 fi
 
 # if [ "$TARGET_JDK" == "aarch32" ] || [ "$TARGET_JDK" == "aarch64" ]
@@ -103,6 +107,7 @@ bash ./configure \
     --with-jvm-features=-dtrace,-zero,-vm-structs,-epsilongc \
     --with-cups-include=$CUPS_DIR \
     --with-devkit=$TOOLCHAIN \
+    --with-native-debug-symbols=external \
     --with-debug-level=$JDK_DEBUG_LEVEL \
     --with-fontconfig-include=$ANDROID_INCLUDE \
     $AUTOCONF_x11arg $AUTOCONF_EXTRA_ARGS \
