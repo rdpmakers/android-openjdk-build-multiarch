@@ -1,5 +1,4 @@
 #!/bin/bash
 set -e
 
-git clone --depth 1 https://github.com/ibmruntimes/openj9-openjdk-jdk17 openjdk
-bash ./get_source.sh
+git clone --depth 1 https://github.com/openjdk/riscv-port-jdk17u openjdk
