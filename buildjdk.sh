@@ -105,11 +105,14 @@ bash ./configure \
     --enable-option-checking=fatal \
     --enable-headless-only=yes \
     --with-jvm-variants=$JVM_VARIANTS \
-    --with-jvm-features=-dtrace,-zero,-vm-structs,-epsilongc,shenandoahgc \
+    --with-jvm-features=-dtrace,-zero,-vm-structs,-epsilongc \
     --with-cups-include=$CUPS_DIR \
     --with-devkit=$TOOLCHAIN \
     --with-native-debug-symbols=external \
     --with-debug-level=$JDK_DEBUG_LEVEL \
+    OBJCOPY=$OBJCOPY \
+    AR=$AR \
+    STRIP=$STRIP \
     --with-fontconfig-include=$ANDROID_INCLUDE \
     OBJCOPY=$OBJCOPY \
     AR=$AR \

@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-git clone --depth 1 https://github.com/openjdk/riscv-port-jdk17u openjdk
+git clone -b wip_dragonwell_standard_merge_branch --depth 1 https://github.com/dragonwell-project/dragonwell17 openjdk
