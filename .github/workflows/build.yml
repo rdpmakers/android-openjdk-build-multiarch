@@ -1,4 +1,4 @@
-name: Build OpenJDK 17 for Android and iOS
+name: Buildx OpenJDK 17 for Android and iOS 
 
 on: [push, pull_request, workflow_dispatch]
 
